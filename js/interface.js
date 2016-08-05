@@ -23,10 +23,13 @@ $('form').submit(function (event) {
 // 3. Fired when the provider has finished
 linkActionProvider.then(function (result) {
   data.action = result.data;
-  data.label = $('#buttonLabel').val();
+  data.label = $('#primaryButtonLabel').val();
 
   Fliplet.Widget.save(data).then(function () {
     Fliplet.Widget.complete();
     window.location.reload();
   });
+});
+}).then(function (result) {
+  data.action = result.data;
 });
