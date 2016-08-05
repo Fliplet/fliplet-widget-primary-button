@@ -57,7 +57,7 @@ label {
     color: #14505e;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1681px) {
   header {
     font-size: 1.0em;
   }
