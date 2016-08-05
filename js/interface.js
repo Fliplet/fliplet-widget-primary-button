@@ -30,6 +30,3 @@ linkActionProvider.then(function (result) {
     window.location.reload();
   });
 });
-}).then(function (result) {
-  data.action = result.data;
-});
