@@ -14,6 +14,12 @@
 	cursor: pointer;
 }
 
+.btn-primary:focus,
+.btn-primary:hover,
+.btn:active:focus {
+  outline: none;
+}
+
 @media (min-width:640px) {
 	.btn-primary {
 		clear: none;
