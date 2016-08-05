@@ -1,9 +1,14 @@
 <div>
   <form>
     <h2>Configure your button</h2>
+
     <div class="form-group">
-      <label for="primaryButtonLabel">Button label</label>
-      <input type="text" name="name" class="form-control" id="primaryButtonLabel" placeholder="Label" value="{{label}}" required />
+      <div class="col-xs-4 control-label">
+        <label for="primaryButtonLabel">Button label</label>
+      </div>
+      <div class="col-xs-8">
+        <input type="text" name="name" class="form-control" id="primaryButtonLabel" placeholder="Label" value="{{label}}" required />
+      </div>
     </div>
 
     <div id="action"></div>
