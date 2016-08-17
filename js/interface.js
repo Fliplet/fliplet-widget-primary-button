@@ -6,20 +6,14 @@ var linkActionProvider = Fliplet.Widget.open('com.fliplet.link', {
   selector: '#action',
   // Also send the data I have locally, so that
   // the interface gets repopulated with the same stuff
-  data: data.action
-  // Removed until fixed
-  /*
-  onEvent: function (e) {
-    // contains e.event and e.data
-    linkSet = e.set;
-
-    if (typeof linkSet == "undefined") {
-      Fliplet.Widget.toggleSaveButton(true);
-    } else {
-      Fliplet.Widget.toggleSaveButton(linkSet);
+  data: data.action,
+  // Events fired from the provider
+  onEvent: function (event, data) {
+    if (event === 'interface-validate') {
+      Fliplet.Widget.toggleSaveButton(data.isValid === true);
     }
   }
-  */
+
 });
 
 // 1. Fired from Fliplet Studio when the external save button is clicked
