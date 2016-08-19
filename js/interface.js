@@ -47,7 +47,7 @@ function save(notifyComplete) {
   });
 }
 
-$('#primaryButtonLabel').keyup($.debounce(function() {
+$('#primaryButtonLabel').on('keyup change paste', $.debounce(function() {
   save();
 }, 500));
 
