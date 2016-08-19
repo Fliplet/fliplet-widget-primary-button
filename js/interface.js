@@ -1,3 +1,4 @@
+var widgetId = Fliplet.Widget.getDefaultId();
 var data = Fliplet.Widget.getData() || {};
 
 var linkActionProvider = Fliplet.Widget.open('com.fliplet.link', {
@@ -30,13 +31,25 @@ $('form').submit(function (event) {
 // 3. Fired when the provider has finished
 linkActionProvider.then(function (result) {
   data.action = result.data;
+  save(true);
+});
+
+function save(notifyComplete) {
   data.label = $('#primaryButtonLabel').val();
 
   Fliplet.Widget.save(data).then(function () {
-    Fliplet.Widget.complete();
-    window.location.reload();
+    if (notifyComplete) {
+      Fliplet.Widget.complete();
+      window.location.reload();
+    } else {
+      Fliplet.Studio.emit('reload-widget-instance', widgetId);
+    }
   });
-});
+}
+
+$('#primaryButtonLabel').on('keyup change paste', $.debounce(function() {
+  save();
+}, 500));
 
 $('#help_tip').on('click', function() {
   alert("During beta, please use live chat and let us know what you need help with.");
