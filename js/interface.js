@@ -30,7 +30,7 @@ $('form').submit(function (event) {
 
 // 3. Fired when the provider has finished
 linkActionProvider.then(function (result) {
-  data.action = result;
+  data.action = result.data;
   save(true);
 });
 
