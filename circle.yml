@@ -1,10 +1,3 @@
-dependencies:
-  pre:
-    - npm install fliplet-cli -g
-    - fliplet env staging
-    - fliplet login -u $TEST_USER -p $TEST_PASSWORD
-    - fliplet organization $TEST_ORGANIZATION
-
 test:
   override:
-    - fliplet test
+    - exit ${FLIPLET_E2E_TESTS_STATUS:-1}
