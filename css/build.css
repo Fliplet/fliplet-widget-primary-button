@@ -1,5 +1,15 @@
 /* Buttons */
 
+.mode-interact .fl-widget-instance[data-name="Primary Button"] {
+  width: 100%;
+}
+
+@media (min-width:640px) {
+  .mode-interact .fl-widget-instance[data-name="Primary Button"] {
+    width: auto;
+  }
+}
+
 .btn-primary {
   display: block;
   clear: both;
