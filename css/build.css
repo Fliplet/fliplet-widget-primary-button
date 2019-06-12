@@ -1,15 +1,4 @@
 /* Buttons */
-
-.mode-interact .fl-widget-instance[data-name="Primary Button"] {
-  width: 100%;
-}
-
-@media (min-width:640px) {
-  .mode-interact .fl-widget-instance[data-name="Primary Button"] {
-    width: auto;
-  }
-}
-
 .btn-primary {
   display: block;
   clear: both;
@@ -36,11 +25,5 @@
     display: inline-block;
     width: auto;
     max-width: 100%;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .fl-page-editable [data-fl-edit] [data-fl-widget-instance][data-name="Primary Button"] {
-    display: block;
   }
 }
