@@ -1,5 +1,8 @@
 var widgetId = Fliplet.Widget.getDefaultId();
 var data = Fliplet.Widget.getData() || {};
+var page = Fliplet.Widget.getPage();
+
+data.omitPages = page ? [page.id] : [];
 
 var linkActionProvider = Fliplet.Widget.open('com.fliplet.link', {
   // If provided, the iframe will be appended here,
@@ -7,7 +10,7 @@ var linkActionProvider = Fliplet.Widget.open('com.fliplet.link', {
   selector: '#action',
   // Also send the data I have locally, so that
   // the interface gets repopulated with the same stuff
-  data: data.action,
+  data: data,
   // Events fired from the provider
   onEvent: function (event, data) {
     if (event === 'interface-validate') {
@@ -30,7 +33,7 @@ $('form').submit(function (event) {
 
 // 3. Fired when the provider has finished
 linkActionProvider.then(function (result) {
-  data.action = result.data;
+  data = result.data;
   save(true);
 });
 
