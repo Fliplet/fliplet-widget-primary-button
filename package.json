@@ -1,0 +1,27 @@
+{
+  "name": "widget-primary-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fliplet/fliplet-widget-primary-button.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fliplet/fliplet-widget-primary-button/issues"
+  },
+  "homepage": "https://github.com/Fliplet/fliplet-widget-primary-button#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-fliplet": "^0.7.0"
+  }
+}
