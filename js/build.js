@@ -6,4 +6,10 @@ Fliplet.Widget.instance('primary-button', function(data) {
       Fliplet.Navigate.to(data.action);
     }
   });
+
+  if (!data.label) {
+    $(this).val(T('button.defaultLabel', {
+      date: moment().format()
+    }));
+  }
 });
