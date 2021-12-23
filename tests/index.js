@@ -1,11 +1,3 @@
-/* global browser */
-/* global expect */
-/* global describe */
-/* global before */
-/* global it */
-/* global page */
-/* global casual */
-
 describe('WHEN a button is rendered', function() {
   describe('GIVEN no label and action have been selected', function() {
     before(async function() {
