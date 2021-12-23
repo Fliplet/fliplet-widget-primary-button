@@ -1,0 +1,24 @@
+name: Fliplet E2E
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 12.x
+        cache: 'npm'
+    - run: npm install fliplet-cli -g
+    - run: fliplet env development
+    - name: Set organization
+      env:
+        ORGANIZATION_ID: ${{ secrets.TESTS_ORGANIZATION_ID }}
+      run: fliplet organization $ORGANIZATION_ID --force
+    - name: Test
+      env:
+        AUTH_TOKEN: ${{ secrets.TESTS_AUTH_TOKEN }}
+      run: AUTH_TOKEN=$AUTH_TOKEN fliplet test

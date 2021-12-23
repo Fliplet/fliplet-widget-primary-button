@@ -1,68 +1,27 @@
-describe('WHEN start component', function() {
-  this.timeout(10000);
-  describe('Interface', function() {
-    it('should have default button label', function(done) {
-      interfaceBrowser
-        .evaluate(function (selector) {
-          return document.querySelector(selector).value;
-        }, 'input[name=name]')
-        .then(function(label) {
-          expect(label).to.equal('Primary button');
-          done();
-        })
+describe('WHEN a button is rendered', function() {
+  describe('GIVEN no label and action have been selected', function() {
+    before(async function() {
+      await browser.renderWidget();
+    });
+
+    it('THEN it should have default button label', async function() {
+      const label = await page.$eval('.btn-primary', input => input.getAttribute('value'));
+
+      expect(label).to.equal('Primary button');
     });
   });
 
-  describe('Build', function() {
-    it('should have default button label', function(done) {
-      const selector = `[data-primary-button-id="${widgetInstance.id}"]`;
-      buildBrowser
-        .evaluate(function (selector) {
-          return document.querySelector(selector).value;
-        }, selector)
-        .then(function(label) {
-          expect(label).to.equal('Primary button');
-          done();
-        })
+  describe('GIVEN a label has been set', function() {
+    const sampleLabel = casual.name;
+
+    before(async function() {
+      await browser.renderWidgetWithData({ label: sampleLabel });
     });
-  });
-});
 
-describe('WHEN change the button label', function () {
-  this.timeout(10000);
-  const newLabel = 'Awesome Label';
-  before(function (done) {
-    interfaceBrowser
-      .type('input[name=name]')
-      .type('input[name=name]', newLabel)
-      .save()
-      .then(done)
-  });
+    it('THEN the label value should be rendered as button text', async function() {
+      const label = await page.$eval('.btn-primary', input => input.getAttribute('value'));
 
-  describe('Interface', function() {
-    it('should have new button label', function(done) {
-      interfaceBrowser
-        .evaluate(function (selector) {
-          return document.querySelector(selector).value;
-        }, 'input[name=name]')
-        .then(function(label) {
-          expect(label).to.equal(newLabel);
-          done();
-        })
-    });
-  });
-
-  describe('Build', function() {
-    it('should have new button label', function(done) {
-      const selector = `[data-primary-button-id="${widgetInstance.id}"]`;
-      buildBrowser
-        .evaluate(function (selector) {
-          return document.querySelector(selector).value;
-        }, selector)
-        .then(function(label) {
-          expect(label).to.equal(newLabel);
-          done();
-        })
+      expect(label).to.equal(sampleLabel);
     });
   });
 });

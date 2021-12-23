@@ -7,7 +7,7 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-fliplet": "^0.7.0"
   }
