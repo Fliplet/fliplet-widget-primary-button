@@ -11,6 +11,7 @@
   cursor: pointer;
   border-radius: 6px;
   white-space: initial;
+  justify-content: center;
 }
 
 .btn-primary:focus,
