@@ -1,6 +1,6 @@
 /* Buttons */
 .btn-primary {
-  display: block;
+  display: flex;
   clear: both;
   width: 100%;
   padding: 10px 16px;
