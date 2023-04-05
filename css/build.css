@@ -1,6 +1,6 @@
 /* Buttons */
 .btn-primary {
-  display: flex;
+  display: block;
   clear: both;
   width: 100%;
   padding: 10px 16px;
@@ -23,7 +23,7 @@
 @media (min-width:640px) {
   .btn-primary {
     clear: none;
-    display: table-cell;
+    display: inline-block;
     width: auto;
     max-width: 100%;
   }
