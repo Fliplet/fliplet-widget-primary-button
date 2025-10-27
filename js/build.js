@@ -5,7 +5,12 @@ Fliplet.Widget.instance('primary-button', function(data) {
     if (data.action) {
       const action = data.action || {};
 
-      action.dynamicContext = await Fliplet.Widget.getDynamicContext($(this));
+      try {
+        action.dynamicContext = await Fliplet.Widget.getDynamicContext($(this));
+      } catch (error) {
+        action.dynamicContext = {};
+      }
+
       Fliplet.Navigate.to(action);
     }
   });
