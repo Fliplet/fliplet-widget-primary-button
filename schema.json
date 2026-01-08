@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "com.fliplet.primary-button",
+  "type": "object",
+  "title": "Fliplet Primary Button schema",
+  "description": "The root schema for the Fliplet Primary Button.",
+  "default": {},
+  "examples": [
+    {
+      "uuid": "a86a36f9-f3ec-45f7-ba2a-77c562da2f3b",
+      "label": "Primary button",
+      "action": {
+        "page": "57279",
+        "action": "screen",
+        "transition": "fade"
+      },
+      "package": "com.fliplet.primary-button",
+      "version": "1.0.0"
+    }
+  ],
+  "required": [
+    "uuid",
+    "label",
+    "action",
+    "package",
+    "version"
+  ],
+  "properties": {
+    "uuid": {
+      "$id": "#/properties/uuid",
+      "default": "",
+      "description": "Unique GUID for the component instance. This can be used to target the component instance in css files.",
+      "examples": [
+        "a86a36f9-f3ec-45f7-ba2a-77c562da2f3b"
+      ],
+      "title": "Unique GUID for the component instance",
+      "type": "string"
+    },
+    "label": {
+      "$id": "#/properties/label",
+      "default": "",
+      "description": "The label to display in the button",
+      "examples": [
+        "Primary buttonz"
+      ],
+      "title": "Title of the button",
+      "type": "string"
+    },
+    "action": {
+      "$id": "#/properties/action",
+      "examples": [
+        {
+          "page": "57279",
+          "action": "screen",
+          "transition": "fade"
+        }
+      ],
+      "title": "Action when the button is pressed",
+      "type": "object",
+      "properties": {
+        "page": {
+          "$id": "#/properties/action/properties/page",
+          "default": "",
+          "description": "The ID of the target screen. This can be found on Fliplet Studio for each screen of the app.",
+          "examples": [
+            "12345"
+          ],
+          "title": "The ID of the target screen",
+          "type": "string"
+        },
+        "action": {
+          "$id": "#/properties/action/properties/action",
+          "default": "screen",
+          "description": "The action that should run when the button is pressed.",
+          "examples": [
+            "screen",
+            "url"
+          ],
+          "title": "Action to run when the button is pressed",
+          "type": "string"
+        },
+        "transition": {
+          "$id": "#/properties/action/properties/transition",
+          "default": "",
+          "description": "The type of transition to run when navigating to a different screen.",
+          "examples": [
+            "fade"
+          ],
+          "title": "The transition for the navigate action",
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "package": {
+      "$id": "#/properties/package",
+      "default": "",
+      "description": "The package name of the component to use. This is automatically set by the system and should not be changed.",
+      "examples": [
+        "com.fliplet.primary-button"
+      ],
+      "title": "The package name of the component",
+      "type": "string"
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "default": "",
+      "description": "The version of the component to use. This is automatically set by the system and should not be changed.",
+      "examples": [
+        "1.0.0"
+      ],
+      "title": "The version of the component to use",
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

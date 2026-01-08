@@ -1,10 +1,12 @@
 {
+  "$schema": "https://api.fliplet.com/v1/widgets/schema.json",
   "name": "Primary Button",
   "package": "com.fliplet.primary-button",
   "version": "1.0.0",
   "icon": "img/icon.png",
   "tags": ["type:component", "category:button"],
   "provider_only": false,
+  "has_schema": true,
   "providers": [
     "com.fliplet.link"
   ],
